@@ -10,7 +10,15 @@
                 <div class="col-12 col-md-8 mx-auto mt-5">
                     <div class="card shadow">
                         <div class="card-header">
-                            <h4 class="card-title">Editar producto: <%= title %></h4>
+                            <div class="d-flex justify-content-between">
+                            <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a class="text-dark" href="/">Home</a></li>
+                                  <li class="breadcrumb-item"><a class="text-dark" href="/admin">Admin</a></li>
+                                  <li class="breadcrumb-item" aria-current="page">Editando producto: <%= title %></li>
+                                </ol>
+                              </nav>
+                        </div>
                         </div>
                         <div class="card-body">
                             <form

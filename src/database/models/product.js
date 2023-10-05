@@ -40,7 +40,8 @@ module.exports = (sequelize, DataTypes) => {
     sectionId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'Product'
+    modelName: 'Product',
+    paranoid: true
   });
   return Product;
 };
