@@ -12,7 +12,7 @@ module.exports = (req,res) => {
         db.Product.create({
             title : title.trim(),
             price,
-            discount,
+            discount: discount || 0,
             sectionId,
             categoryId,
             description : description.trim()

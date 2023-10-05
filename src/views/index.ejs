@@ -20,14 +20,11 @@
                 </div>
                 <div class="home__main__section--products">
 
-                    <% products.forEach(({title, description, id, image,section},index)=> { %>
+                    <% products.forEach(({title, description, id, images,section},index)=> { %>
                         <article class="home__main__section__article" data-aos="zoom-in-<%= index % 2 === 0 ? 'up' : index % 3 === 0 ? 'left' : 'right'%>" data-aos-duration="500">
                             <div class="home__main__section__article--box">
                                 <img class="home__main__section__article--image"
-                                    src="/img/products/<%= image ? image : 'img-pdto-1.jpg' %>" alt="producto1">
-                                <img class="home__main__section__article--sticker"
-                                    src="/img/<%= section === 'free' ? 'img-gratis.png' : section === 'sale' ? 'img-descuento.png' : 'img-nuevo.png' %>"
-                                    alt="nuevo">
+                                    src="/img/products/<%= images.find(image => image.main).file %>" alt="producto1">
                                 <a class="home__main__section__article--zoom" href="">AMPLIAR FOTO</a>
                             </div>
                             <h4 class="home__main__section__article--title">

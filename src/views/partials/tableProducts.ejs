@@ -12,7 +12,7 @@
             </tr>
         </thead>
         <tbody>
-            <% products.forEach(({id, title,category, price,discount, image, description},index)=> { %>
+            <% products.forEach(({id, title,category,section, price,discount, images, description},index)=> { %>
                 <tr>
                     <th scope="row">
                         <%= index + 1 %>
@@ -21,7 +21,7 @@
                         <%= title %>
                     </td>
                     <td>
-                        <%= categoryId || 'Sin especificar' %>
+                        <%= category.name %>
                     </td>
                     <td>
                         <%= price %>
@@ -55,8 +55,13 @@
                                             <div class="card mb-3">
                                                 <div class="row g-0">
                                                     <div class="col-md-6">
-                                                        <img src="/img/products/<%= image || 'img-pdto-1.jpg'%>"
+                                                        <img src="/img/products/<%=images.find(image => image.main).file%>"
                                                             class="img-fluid" alt="...">
+                                                            <div class="d-flex flex-wrap justify-content-beetween">
+                                                                <% images.filter(image => !image.main ).forEach(image => { %>
+                                                                    <img style="width: 33%;" src="/img/products/<%= image.file %>" alt="">
+                                                                <% }) %>
+                                                            </div>
                                                     </div>
                                                     <div class="col-md-6">
                                                         <div class="card-body">
@@ -66,6 +71,12 @@
                                                             <p class="card-text">
                                                                 <%=description%>
                                                             </p>
+                                                            <ul class="list-group list-group-flush">
+                                                                <li class="list-group-item">Categoria: <%= category.name %></li>
+                                                                <li class="list-group-item">Sección: <%= section.name %></li>
+                                                                <li class="list-group-item">Precio:<%= price %></li>
+                                                                <li class="list-group-item">Descuento: <%= discount %></li>
+                                                              </ul>
                                                         </div>
                                                     </div>
                                                 </div>
