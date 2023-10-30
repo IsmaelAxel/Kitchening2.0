@@ -1,4 +1,3 @@
-const { readJSON, writeJSON } = require("../../data")
 const db = require('../../database/models')
 module.exports = (req,res) => {
     db.Product.destroy({

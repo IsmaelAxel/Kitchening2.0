@@ -9,5 +9,4 @@ module.exports = (req,res) => {
             ...product.dataValues
         })
     }).catch(error => console.log(error))
-
 }

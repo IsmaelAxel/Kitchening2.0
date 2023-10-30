@@ -3,10 +3,10 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.renameColumn('products', 'deleteAt', 'deletedAt');
+    return queryInterface.renameColumn('Products', 'deleteAt', 'deletedAt');
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.renameColumn('products', 'deletedAt', 'deleteAt');
+    return queryInterface.renameColumn('Products', 'deletedAt', 'deleteAt');
   }
 };
